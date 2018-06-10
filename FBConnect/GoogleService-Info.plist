@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>900654121271-1rb1tmahqj1v3iccq5pnsieo2sj6cvn6.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.900654121271-1rb1tmahqj1v3iccq5pnsieo2sj6cvn6</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBHj9RV7mbo8WCjIPiDI4RhdgOhHw8nkjQ</string>
+	<key>GCM_SENDER_ID</key>
+	<string>900654121271</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.FBConnect</string>
+	<key>PROJECT_ID</key>
+	<string>fbconnect-af444</string>
+	<key>STORAGE_BUCKET</key>
+	<string>fbconnect-af444.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true></true>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false></false>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:900654121271:ios:47fdc1267fcda810</string>
+	<key>DATABASE_URL</key>
+	<string>https://fbconnect-af444.firebaseio.com</string>
+</dict>
+</plist>
