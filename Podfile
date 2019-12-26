@@ -5,9 +5,10 @@ target 'FBConnect' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   pod 'Bolts'
   pod 'Firebase/Core'
-  pod 'FBSDKCoreKit'
-  pod 'FBSDKShareKit'
-  pod 'FBSDKLoginKit'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Database'
+  pod 'TwitterKit'
+  pod 'Mapbox-iOS-SDK', '~> 4.0'
   use_frameworks!
 
   # Pods for FBConnect

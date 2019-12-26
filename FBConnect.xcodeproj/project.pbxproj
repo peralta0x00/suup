@@ -7,20 +7,39 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2DA5A3EF22D5817400CA4F2C /* aboutPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA5A3EE22D5817400CA4F2C /* aboutPageView.swift */; };
+		2DF4A8CC22D80585001E2503 /* otherUserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF4A8CB22D80585001E2503 /* otherUserProfileView.swift */; };
+		700718F620FC1E5F004742F8 /* roomLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700718F520FC1E5F004742F8 /* roomLoadingView.swift */; };
 		7032552C20CD017D00ED3926 /* tab1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7032552B20CD017D00ED3926 /* tab1View.swift */; };
+		7032552E20CDCC6F00ED3926 /* dbBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7032552D20CDCC6F00ED3926 /* dbBrain.swift */; };
+		7032553020CDE99600ED3926 /* tab3View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7032552F20CDE99600ED3926 /* tab3View.swift */; };
 		7054933520CBAA1E0055F478 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7054933420CBAA1E0055F478 /* AppDelegate.swift */; };
 		7054933920CBAA1E0055F478 /* loginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7054933820CBAA1E0055F478 /* loginView.swift */; };
 		7054933E20CBAA1E0055F478 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7054933C20CBAA1E0055F478 /* Main.storyboard */; };
 		7054934020CBAA1E0055F478 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7054933F20CBAA1E0055F478 /* Assets.xcassets */; };
 		7054934320CBAA1E0055F478 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7054934120CBAA1E0055F478 /* LaunchScreen.storyboard */; };
+		705F27ED20D9DD9F000DCDC0 /* chatroom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705F27EC20D9DD9F000DCDC0 /* chatroom.swift */; };
+		7096F62320CF3FBE008E6F3C /* tab2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7096F62220CF3FBE008E6F3C /* tab2View.swift */; };
+		70C67F71215D8494006CC544 /* userClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C67F70215D8494006CC544 /* userClass.swift */; };
 		70D242F420CC7AA900C2A580 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 70D242F320CC7AA800C2A580 /* GoogleService-Info.plist */; };
-		91F96EEC2A619557C1665ED3 /* Pods_FBConnect.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68A10CED0BBDE46DA3BE2FD1 /* Pods_FBConnect.framework */; };
+		91F96EEC2A619557C1665ED3 /* Pods_FBConnect.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68A10CED0BBDE46DA3BE2FD1 /* Pods_FBConnect.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		936EEE2523340E0A00442E49 /* Screen Shot 2019-09-19 at 12.25.54 PM.png in Resources */ = {isa = PBXBuildFile; fileRef = 936EEE2423340E0A00442E49 /* Screen Shot 2019-09-19 at 12.25.54 PM.png */; };
+		939A097623A827880035B00A /* customMapHelp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939A097523A827880035B00A /* customMapHelp.swift */; };
+		93DFE6F2235FB30000996633 /* createRoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DFE6F1235FB30000996633 /* createRoomView.swift */; };
+		93DFE6F6235FB4E900996633 /* confirmEULA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DFE6F5235FB4E900996633 /* confirmEULA.swift */; };
+		93FB9A952334343D008037B8 /* graySuup.png in Resources */ = {isa = PBXBuildFile; fileRef = 93FB9A942334343D008037B8 /* graySuup.png */; };
+		93FB9A9B2334362E008037B8 /* fuckinggray.png in Resources */ = {isa = PBXBuildFile; fileRef = 93FB9A9A2334362E008037B8 /* fuckinggray.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2DA5A3EE22D5817400CA4F2C /* aboutPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aboutPageView.swift; sourceTree = "<group>"; };
+		2DF4A8CB22D80585001E2503 /* otherUserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = otherUserProfileView.swift; sourceTree = "<group>"; };
 		52733A6345328EDDAD0C7B65 /* Pods-FBConnect.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FBConnect.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FBConnect/Pods-FBConnect.debug.xcconfig"; sourceTree = "<group>"; };
 		68A10CED0BBDE46DA3BE2FD1 /* Pods_FBConnect.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FBConnect.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		700718F520FC1E5F004742F8 /* roomLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = roomLoadingView.swift; sourceTree = "<group>"; };
 		7032552B20CD017D00ED3926 /* tab1View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tab1View.swift; sourceTree = "<group>"; };
+		7032552D20CDCC6F00ED3926 /* dbBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dbBrain.swift; sourceTree = "<group>"; };
+		7032552F20CDE99600ED3926 /* tab3View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tab3View.swift; sourceTree = "<group>"; };
 		7054933120CBAA1E0055F478 /* FBConnect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FBConnect.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7054933420CBAA1E0055F478 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7054933820CBAA1E0055F478 /* loginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginView.swift; sourceTree = "<group>"; };
@@ -28,7 +47,17 @@
 		7054933F20CBAA1E0055F478 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7054934220CBAA1E0055F478 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7054934420CBAA1E0055F478 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		705F27EC20D9DD9F000DCDC0 /* chatroom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chatroom.swift; sourceTree = "<group>"; };
+		7096F62220CF3FBE008E6F3C /* tab2View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tab2View.swift; sourceTree = "<group>"; };
+		70C67F70215D8494006CC544 /* userClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userClass.swift; sourceTree = "<group>"; };
 		70D242F320CC7AA800C2A580 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		931430332342A2A400D21059 /* FBConnect.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FBConnect.entitlements; sourceTree = "<group>"; };
+		936EEE2423340E0A00442E49 /* Screen Shot 2019-09-19 at 12.25.54 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Screen Shot 2019-09-19 at 12.25.54 PM.png"; path = "../../../Desktop/Screen Shot 2019-09-19 at 12.25.54 PM.png"; sourceTree = "<group>"; };
+		939A097523A827880035B00A /* customMapHelp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customMapHelp.swift; sourceTree = "<group>"; };
+		93DFE6F1235FB30000996633 /* createRoomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = createRoomView.swift; path = "../../../Desktop/sept 13 2019 2/FBConnect/createRoomView.swift"; sourceTree = "<group>"; };
+		93DFE6F5235FB4E900996633 /* confirmEULA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = confirmEULA.swift; sourceTree = "<group>"; };
+		93FB9A942334343D008037B8 /* graySuup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = graySuup.png; path = ../../graySuup.png; sourceTree = "<group>"; };
+		93FB9A9A2334362E008037B8 /* fuckinggray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fuckinggray.png; path = ../../fuckinggray.png; sourceTree = "<group>"; };
 		D242FFC05989F636717642EC /* Pods-FBConnect.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FBConnect.release.xcconfig"; path = "Pods/Target Support Files/Pods-FBConnect/Pods-FBConnect.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -65,14 +94,29 @@
 		7054933320CBAA1E0055F478 /* FBConnect */ = {
 			isa = PBXGroup;
 			children = (
+				931430332342A2A400D21059 /* FBConnect.entitlements */,
+				2DA5A3EE22D5817400CA4F2C /* aboutPageView.swift */,
 				7054933420CBAA1E0055F478 /* AppDelegate.swift */,
+				939A097523A827880035B00A /* customMapHelp.swift */,
 				7054933820CBAA1E0055F478 /* loginView.swift */,
+				93FB9A942334343D008037B8 /* graySuup.png */,
+				7032552B20CD017D00ED3926 /* tab1View.swift */,
+				93DFE6F1235FB30000996633 /* createRoomView.swift */,
+				7096F62220CF3FBE008E6F3C /* tab2View.swift */,
+				93DFE6F5235FB4E900996633 /* confirmEULA.swift */,
+				7032552F20CDE99600ED3926 /* tab3View.swift */,
+				700718F520FC1E5F004742F8 /* roomLoadingView.swift */,
+				705F27EC20D9DD9F000DCDC0 /* chatroom.swift */,
+				93FB9A9A2334362E008037B8 /* fuckinggray.png */,
+				7032552D20CDCC6F00ED3926 /* dbBrain.swift */,
+				2DF4A8CB22D80585001E2503 /* otherUserProfileView.swift */,
+				70C67F70215D8494006CC544 /* userClass.swift */,
 				7054933C20CBAA1E0055F478 /* Main.storyboard */,
 				7054933F20CBAA1E0055F478 /* Assets.xcassets */,
 				7054934120CBAA1E0055F478 /* LaunchScreen.storyboard */,
+				936EEE2423340E0A00442E49 /* Screen Shot 2019-09-19 at 12.25.54 PM.png */,
 				7054934420CBAA1E0055F478 /* Info.plist */,
 				70D242F320CC7AA800C2A580 /* GoogleService-Info.plist */,
-				7032552B20CD017D00ED3926 /* tab1View.swift */,
 			);
 			path = FBConnect;
 			sourceTree = "<group>";
@@ -106,7 +150,7 @@
 				7054932E20CBAA1E0055F478 /* Frameworks */,
 				7054932F20CBAA1E0055F478 /* Resources */,
 				E9D6108A5FAC9CD45B79C131 /* [CP] Embed Pods Frameworks */,
-				234788F79C5B6FB73AC22077 /* [CP] Copy Pods Resources */,
+				10430D27DF3699B6702FAA2C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -129,6 +173,7 @@
 				TargetAttributes = {
 					7054933020CBAA1E0055F478 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -156,6 +201,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93FB9A9B2334362E008037B8 /* fuckinggray.png in Resources */,
+				936EEE2523340E0A00442E49 /* Screen Shot 2019-09-19 at 12.25.54 PM.png in Resources */,
+				93FB9A952334343D008037B8 /* graySuup.png in Resources */,
 				7054934320CBAA1E0055F478 /* LaunchScreen.storyboard in Resources */,
 				7054934020CBAA1E0055F478 /* Assets.xcassets in Resources */,
 				70D242F420CC7AA900C2A580 /* GoogleService-Info.plist in Resources */,
@@ -166,49 +214,78 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		10430D27DF3699B6702FAA2C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 12;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FBConnect/Pods-FBConnect-resources.sh",
+				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterKitResources.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TwitterKitResources.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FBConnect/Pods-FBConnect-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		175A951D8708B6EA16968224 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FBConnect-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		234788F79C5B6FB73AC22077 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FBConnect/Pods-FBConnect-resources.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E9D6108A5FAC9CD45B79C131 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			files = (
 			);
 			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FBConnect/Pods-FBConnect-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${PODS_ROOT}/Mapbox-iOS-SDK/dynamic/Mapbox.framework",
+				"${PODS_ROOT}/Mapbox-iOS-SDK/dynamic/Mapbox.framework.dSYM",
+				"${PODS_ROOT}/Mapbox-iOS-SDK/dynamic/66495660-FF2A-3226-B17F-5CC56D59F501.bcsymbolmap",
+				"${PODS_ROOT}/Mapbox-iOS-SDK/dynamic/DF79E105-5E91-37A1-A739-B7930EE5C180.bcsymbolmap",
+				"${PODS_ROOT}/TwitterCore/iOS/TwitterCore.framework",
+				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mapbox.framework",
+				"${DWARF_DSYM_FOLDER_PATH}/Mapbox.framework.dSYM",
+				"${BUILT_PRODUCTS_DIR}/66495660-FF2A-3226-B17F-5CC56D59F501.bcsymbolmap",
+				"${BUILT_PRODUCTS_DIR}/DF79E105-5E91-37A1-A739-B7930EE5C180.bcsymbolmap",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FBConnect/Pods-FBConnect-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FBConnect/Pods-FBConnect-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -220,7 +297,18 @@
 			files = (
 				7054933920CBAA1E0055F478 /* loginView.swift in Sources */,
 				7054933520CBAA1E0055F478 /* AppDelegate.swift in Sources */,
+				7032552E20CDCC6F00ED3926 /* dbBrain.swift in Sources */,
+				93DFE6F6235FB4E900996633 /* confirmEULA.swift in Sources */,
+				7096F62320CF3FBE008E6F3C /* tab2View.swift in Sources */,
+				700718F620FC1E5F004742F8 /* roomLoadingView.swift in Sources */,
 				7032552C20CD017D00ED3926 /* tab1View.swift in Sources */,
+				2DA5A3EF22D5817400CA4F2C /* aboutPageView.swift in Sources */,
+				705F27ED20D9DD9F000DCDC0 /* chatroom.swift in Sources */,
+				7032553020CDE99600ED3926 /* tab3View.swift in Sources */,
+				939A097623A827880035B00A /* customMapHelp.swift in Sources */,
+				93DFE6F2235FB30000996633 /* createRoomView.swift in Sources */,
+				2DF4A8CC22D80585001E2503 /* otherUserProfileView.swift in Sources */,
+				70C67F71215D8494006CC544 /* userClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,7 +384,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -349,7 +437,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -362,14 +450,22 @@
 			baseConfigurationReference = 52733A6345328EDDAD0C7B65 /* Pods-FBConnect.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = FBConnect/FBConnect.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = 226ASFBASC;
 				INFOPLIST_FILE = FBConnect/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.2.55;
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.FBConnect;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -378,14 +474,21 @@
 			baseConfigurationReference = D242FFC05989F636717642EC /* Pods-FBConnect.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = FBConnect/FBConnect.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = 226ASFBASC;
 				INFOPLIST_FILE = FBConnect/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.2.55;
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.FBConnect;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
