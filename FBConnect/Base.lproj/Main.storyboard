@@ -565,7 +565,7 @@
         <scene sceneID="4Qj-ra-5iv">
             <objects>
                 <viewController id="1Kc-FG-cT7" customClass="createRoomView" customModule="FBConnect" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" id="0t2-Es-e1g">
+                    <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="0t2-Es-e1g">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>

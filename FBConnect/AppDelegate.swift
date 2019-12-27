@@ -99,7 +99,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let diff = Int(Date().timeIntervalSince(exitTime!)) //should be good???
             //check is to allow tab1 to load room... checks done later, kinda bad?
             if diff >= 60 {
-             //  if let userCount = dataB.hostRoom.userCount {
                 if dataB.hostRoom.userCount == 1 { //regarldess if they made the room, if they come back after 60s they're gone
                     dataB.deleteRoom() //?????? //will remove userdefaults in datab!!!!
                 }

@@ -75,6 +75,7 @@ class tab1View: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
         self.hideKeyboardWhenTappedAround()
         NotificationCenter.default.addObserver(self, selector: #selector(reload), name: NSNotification.Name(rawValue: "load"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(clearedRoom), name: NSNotification.Name(rawValue: "clearedRoom"), object: nil)
+        
         NotificationCenter.default.addObserver(self, selector: #selector(updateUserCount) , name: NSNotification.Name(rawValue: "updateUserCount"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(pauseRoom) , name: NSNotification.Name(rawValue: "pauseRoom"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(comingBack) , name: NSNotification.Name(rawValue: "comingBack"), object: nil)
@@ -104,7 +105,7 @@ class tab1View: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
                 self.showNothingHere()
             }
         }
-        super.viewDidAppear(true)
+       
     }
     
     
@@ -327,6 +328,7 @@ class tab1View: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
         UserDefaults.standard.setValue(nil, forKey: "lastJoinedRoom")
         self.mainTable.reloadData()
         self.clearTable = false
+        
     }
     @objc func reload() {
         

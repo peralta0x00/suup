@@ -226,7 +226,7 @@ class tab2View: UIViewController, CLLocationManagerDelegate, MGLMapViewDelegate 
                 recentUser.title = "From \(home)"
             }
             else {
-                recentUser.title = "From Planet Earth (not yet set)"
+                recentUser.title = "From Earth (default)"
             }
             self.cityLocals[UID] = recentUser
             self.mapView.addAnnotation(recentUser)

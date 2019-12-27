@@ -66,7 +66,7 @@ class otherUserProfileView: UIViewController {
                 DispatchQueue.main.async {
                     self.usersImage.image = result
                     if let blocked =  UserDefaults.standard.value(forKey: "blockedList") as? [String] {
-                        if blocked.contains(self.otherUser!.getUserUID()) {
+                        if blocked.contains(person.getUserUID()) {
                             self.blockedDescript.setAttributedTitle(NSAttributedString(string: "Unblock"), for: .normal)
                         }
                         else {
@@ -75,18 +75,13 @@ class otherUserProfileView: UIViewController {
                     }
                 }
             })
-            dataB.rootRef.child("users").child(person.getUserUID()).observeSingleEvent(of: .value) { (usersInfo) in
-                if usersInfo.exists() {
-                    if let info = usersInfo.value as? [String: Any] {
-                        if info.keys.contains("hometown") {
-                            self.hometownLabel.text = "From: \(info["hometown"] as! String)"
-                        }
-                        else {
-                            self.hometownLabel.text = "From: nowhere (N/A)"
-                        }
-                    }
-                }
+            if let town = person.getTown() {
+                self.hometownLabel.text = "From: \(town)"
             }
+            else {
+                self.hometownLabel.text = "From: Earth (default)"
+            }
+            
         }
         super.viewDidLoad()
     }

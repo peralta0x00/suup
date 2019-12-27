@@ -147,7 +147,8 @@ class mainUser: user {
     }
     
     
-    private func setTown() {
+    override func setTown() {
+        super.setTown() //to incapsulate for whatever reason... and set at userdefaults.standard level
         dataB.findTheirTown(UID: self.getUserUID(), dataResult: { (townResult) in
             if townResult != nil {
                 self.uDefaults.setValue(townResult!, forKey: "hometown")
@@ -188,6 +189,7 @@ class user {
     private var active: Bool?
     private var UID: String
     private var moodString: String?
+    private var town: String?
     
 
     
@@ -198,6 +200,25 @@ class user {
         self.active = activityIsOn
         self.UID = userUID
         self.setMood(new: nil) //everyone is getting their mood checked?
+        self.setTown()
+    }
+    
+    func setTown() {
+        dataB.rootRef.child("users").child(self.UID).observeSingleEvent(of: .value) { (usersInfo) in
+            if usersInfo.exists() {
+                if let info = usersInfo.value as? [String: Any] {
+                    if info.keys.contains("hometown") {
+                        self.town = (info["hometown"] as! String) //assuming condition above is good enough..
+                    }
+                    else {
+                        self.town = nil
+                    }
+                }
+            }
+        }
+    }
+    func getTown() -> String? {
+        return self.town
     }
     
     //..........
