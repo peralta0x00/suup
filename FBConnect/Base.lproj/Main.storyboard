@@ -1435,10 +1435,35 @@ In order to ensure Suup provides the best experience possible for everyone, we s
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KCu-1A-RtO">
+                                <rect key="frame" x="125" y="342" width="164" height="40"/>
+                                <color key="backgroundColor" name="systemBlueColor" catalog="System" colorSpace="catalog"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="122" id="Hdg-pY-GXy"/>
+                                    <constraint firstAttribute="height" constant="40" id="w3a-dZ-nnK"/>
+                                    <constraint firstAttribute="width" constant="164" id="w94-2N-ubB"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="xc2-qQ-ICK"/>
+                                </constraints>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="BETA TWTRLogin">
+                                            <attributes>
+                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <font key="NSFont" size="18" name="Menlo-Regular"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                                <connections>
+                                    <action selector="updatedLoginAction:" destination="twd-XK-OB1" eventType="touchUpInside" id="bc3-iX-Nyu"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.67000000000000004" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="9lU-Dx-XUI" firstAttribute="leading" secondItem="Bz8-6R-OrJ" secondAttribute="leading" constant="12" id="6xD-y5-04h"/>
+                            <constraint firstItem="Bz8-6R-OrJ" firstAttribute="trailing" secondItem="KCu-1A-RtO" secondAttribute="trailing" constant="125" id="CWA-y4-EM7"/>
                             <constraint firstItem="Bz8-6R-OrJ" firstAttribute="trailing" secondItem="d8j-5D-mK2" secondAttribute="trailing" constant="128" id="DuO-Xe-ars"/>
                             <constraint firstItem="5Sv-hq-cDf" firstAttribute="leading" secondItem="Bz8-6R-OrJ" secondAttribute="leading" constant="62" id="GyW-J7-1cT"/>
                             <constraint firstItem="Bz8-6R-OrJ" firstAttribute="trailing" secondItem="EBc-b9-3vm" secondAttribute="trailing" constant="125" id="Nwx-jB-XkU"/>
@@ -1449,8 +1474,10 @@ In order to ensure Suup provides the best experience possible for everyone, we s
                             <constraint firstItem="Bz8-6R-OrJ" firstAttribute="trailing" secondItem="5Sv-hq-cDf" secondAttribute="trailing" constant="62" id="rJo-xs-plS"/>
                             <constraint firstItem="Bz8-6R-OrJ" firstAttribute="trailing" secondItem="GkT-yh-lI1" secondAttribute="trailing" constant="81" id="tdC-58-Bex"/>
                             <constraint firstItem="EBc-b9-3vm" firstAttribute="leading" secondItem="Bz8-6R-OrJ" secondAttribute="leading" constant="125" id="v8A-gF-c7b"/>
+                            <constraint firstItem="KCu-1A-RtO" firstAttribute="leading" secondItem="Bz8-6R-OrJ" secondAttribute="leading" constant="125" id="vOx-LX-jhI"/>
                             <constraint firstItem="5Sv-hq-cDf" firstAttribute="top" secondItem="EBc-b9-3vm" secondAttribute="bottom" constant="151" id="vhV-DZ-vqj"/>
                             <constraint firstItem="9lU-Dx-XUI" firstAttribute="top" secondItem="GkT-yh-lI1" secondAttribute="bottom" constant="8" id="w9d-cd-VyO"/>
+                            <constraint firstItem="EBc-b9-3vm" firstAttribute="top" secondItem="KCu-1A-RtO" secondAttribute="bottom" constant="8" id="xDX-29-52G"/>
                             <constraint firstItem="GkT-yh-lI1" firstAttribute="leading" secondItem="Bz8-6R-OrJ" secondAttribute="leading" constant="81" id="yot-BJ-ODn"/>
                             <constraint firstItem="EBc-b9-3vm" firstAttribute="top" secondItem="9lU-Dx-XUI" secondAttribute="bottom" constant="133" id="zgl-v0-4Xg"/>
                         </constraints>
@@ -1460,6 +1487,7 @@ In order to ensure Suup provides the best experience possible for everyone, we s
                     <connections>
                         <outlet property="aboutButton" destination="EBc-b9-3vm" id="BjL-bk-vIx"/>
                         <outlet property="afuckinglabel" destination="9lU-Dx-XUI" id="zoU-eS-YkA"/>
+                        <outlet property="updatedLoginButton" destination="KCu-1A-RtO" id="oQy-F5-CuR"/>
                         <outlet property="visitUsLabel" destination="d8j-5D-mK2" id="RFr-GW-tFg"/>
                         <segue destination="PfK-oi-fkd" kind="presentation" identifier="loggedIn" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="EZF-bY-F2v"/>
                         <segue destination="rua-ol-ZXh" kind="show" identifier="showAboutPage" id="hFg-Rg-yhM"/>
@@ -1481,6 +1509,6 @@ In order to ensure Suup provides the best experience possible for everyone, we s
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="cD8-Fw-F9a"/>
-        <segue reference="jHa-Kv-I4g"/>
+        <segue reference="EZF-bY-F2v"/>
     </inferredMetricsTieBreakers>
 </document>

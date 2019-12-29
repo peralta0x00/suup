@@ -24,6 +24,37 @@ class loginView: UIViewController {
     @IBOutlet weak var visitUsLabel: UIButton!
     @IBOutlet weak var afuckinglabel: UILabel!
     @IBOutlet weak var aboutButton: UIButton!
+    @IBOutlet weak var updatedLoginButton: UIButton! //can refactor in future..
+     let provider = OAuthProvider(providerID: "twitter.com")
+    
+    @IBAction func updatedLoginAction(_ sender: UIButton) {
+       
+        provider.getCredentialWith(nil) { (creds, error) in
+            if error != nil {
+                print(error)
+            }
+            if creds != nil {
+                Auth.auth().signIn(with: creds!) { (authResult, error) in
+                    if error != nil {
+                        print(error)
+                    }
+                    if let result = authResult {
+                        print("here's auth result from updated method: \(result)")
+                        TWTRAPIClient(userID: result.user.uid).loadUser(withID: result.user.uid) { (loggedUser, error) in
+                            if error != nil {
+                                self.present(createError(mensaje: "error loading creds with updated method: \(error)"), animated: true)
+                            }
+                            else if loggedUser != nil {
+                                person = mainUser(user: loggedUser!)
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -57,34 +88,7 @@ class loginView: UIViewController {
         self.visitUsLabel.layer.cornerRadius = 5
         self.visitUsLabel.layer.masksToBounds = true
         
-        /**s
-        let provider = OAuthProvider(providerID: "twitter.com")
-               provider.getCredentialWith(nil) { (creds, error) in
-                   if error != nil {
-                       print(error)
-                   }
-                   if creds != nil {
-                       Auth.auth().signIn(with: creds!) { (authResult, error) in
-                           if error != nil {
-                               print(error)
-                           }
-                           if let result = authResult {
-                               print("here's auth result from updated method: \(result)")
-                               TWTRAPIClient(userID: result.user.uid).loadUser(withID: result.user.uid) { (loggedUser, error) in
-                                   if error != nil {
-                                       self.present(createError(mensaje: "error loading creds with updated method: \(error)"), animated: true)
-                                   }
-           
-                                   else if loggedUser != nil {
-                                       person = mainUser(user: loggedUser!)
-                                   }
-                               }
-                           }
-                       }
-                   }
-
-               }
-        **/
+        
         
         let loginButton = TWTRLogInButton { (result, error) in
             if error != nil {
