@@ -233,15 +233,18 @@ class tab2View: UIViewController, CLLocationManagerDelegate, MGLMapViewDelegate 
         }
     }
     func gatherAndPresentRooms() {
-        dataB.rootRef.child("rooms").child(self.lastValidCity!).observe(.value) { (snapshot) in
-            if snapshot.exists() {
-                if let tmp = snapshot.value as? [String: [String: Any]] {
-                    if tmp["static"] != nil  {
-                        self.presentStatic(freshRooms: tmp["static"] as! [String: [String: Any]], dbREF: dataB.rootRef.child("rooms").child(self.lastValidCity!).child("static"))
+        DispatchQueue.global(qos: .background).sync {
+            dataB.rootRef.child("rooms").child(self.lastValidCity!).observe(.value) { (snapshot) in
+                if snapshot.exists() {
+                    if let tmp = snapshot.value as? [String: [String: Any]] {
+                        if tmp["static"] != nil  {
+                            self.presentStatic(freshRooms: tmp["static"] as! [String: [String: Any]], dbREF: dataB.rootRef.child("rooms").child(self.lastValidCity!).child("static"))
+                        }
                     }
                 }
             }
         }
+        
         dataB.rootRef.child("rooms").child(self.lastValidCity!).child("static").observe(.childRemoved) { (childRemoved) in
             if childRemoved.exists() {
                 if let annot = self.staticRooms[childRemoved.key]  {
@@ -324,8 +327,16 @@ class tab2View: UIViewController, CLLocationManagerDelegate, MGLMapViewDelegate 
         self.usercountlabel.layer.masksToBounds = true
     }
     
+    //uses great distance formula
     func getDistance(x1: Double, y1: Double, x2: Double, y2: Double) -> Double {
-        return sqrt(pow(x2 - x1, 2) + pow(y2 - y1, 2))
+        var help: Double = 0
+        let b1: Double = (3.141592653589 / 180) * x1
+        let c1: Double = (3.141592653589 / 180) * y1
+        let b2: Double = (3.141592653589 / 180) * x2
+        let c2: Double = (3.141592653589 / 180) * y2
+        help = sqrt( pow(sin((b1-b2)/2), 2) + cos(b1)*cos(b2)*pow( sin((c1-c2)/2),2))
+        let temp = 2 * (6378.137) *   ( asin(help) * (180/3.14159265358979)  )
+        return temp
     }
     
     func keysForValue(dict: [String: Double], value: Double) ->  [String] {
@@ -344,7 +355,8 @@ class tab2View: UIViewController, CLLocationManagerDelegate, MGLMapViewDelegate 
         if self.lastValidCity == nil {
             return
         }
-        self.updateMapCount()
+        self.updateMapCount() //map display information like room, user count
+        
         if self.staticRooms.isEmpty { //want to make sure its tried to load what i can
             self.createLabel.isUserInteractionEnabled = true
             self.createLabel.layer.backgroundColor = UIColor.blue.cgColor
@@ -359,11 +371,11 @@ class tab2View: UIViewController, CLLocationManagerDelegate, MGLMapViewDelegate 
             
             let sorted = Array(self.distanceToCoords.values).sorted(by: <)
             
-            if sorted[0] < 0.0028 { // 0.0007 is completely arbitrary i think
+            if sorted[0] < 8 { //8 meters
                 self.createLabel.isUserInteractionEnabled = false
                 self.createLabel.layer.backgroundColor = UIColor.darkGray.cgColor
             }
-            else if sorted[0] > 0.0028 && self.createLabel.isUserInteractionEnabled == false { //was too close, but back off... free to create room
+            else if sorted[0] > 8 && self.createLabel.isUserInteractionEnabled == false { //was too close, but back off... free to create room
                 self.createLabel.isUserInteractionEnabled = true
                 self.createLabel.layer.backgroundColor = UIColor.blue.cgColor
             }
