@@ -237,6 +237,9 @@ class tab2View: UIViewController, CLLocationManagerDelegate, MGLMapViewDelegate 
         }
     }
     func gatherAndPresentRooms() {
+        if self.lastValidCity == nil {
+            return
+        }
         DispatchQueue.global(qos: .background).sync {
             dataB.rootRef.child("rooms").child(self.lastValidCity!).observe(.value) { (snapshot) in
                 if snapshot.exists() {
