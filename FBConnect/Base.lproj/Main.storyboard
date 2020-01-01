@@ -419,7 +419,7 @@
                                         </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gxW-I8-Sfp">
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gxW-I8-Sfp">
                                         <rect key="frame" x="192" y="664" width="93" height="35"/>
                                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -1509,6 +1509,6 @@ In order to ensure Suup provides the best experience possible for everyone, we s
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="cD8-Fw-F9a"/>
-        <segue reference="EZF-bY-F2v"/>
+        <segue reference="jHa-Kv-I4g"/>
     </inferredMetricsTieBreakers>
 </document>

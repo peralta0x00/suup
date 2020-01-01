@@ -101,41 +101,35 @@ class tab2View: UIViewController, CLLocationManagerDelegate, MGLMapViewDelegate 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if locations[0].verticalAccuracy <= 13 {
             CLGeocoder().reverseGeocodeLocation(locations[0]) { (placemark, error) in
-                if error != nil {
-                    print("couldn't determine location of provided coords: \(error)")
-                }
-                else {
-                    if delAccess.city == nil || delAccess.city != placemark?[0].locality {
-                        delAccess.city != placemark?[0].locality && delAccess.city != nil ? self.resetMapData() : nil //resets when new city
-                        delAccess.city = placemark?[0].locality!
-                        self.lastValidCity = placemark?[0].locality!
-                        self.citylabel.text = placemark?[0].locality!
-                        
-                        self.gatherAndPresentLocals()
-                        self.gatherAndPresentRooms() //maybe have this data popup, but turn off buttons
-                        
-                        if self.lastUpdate == nil { //gonna update if needed.. may be turned back on
-                            if let wantToShare = UserDefaults.standard.value(forKey: "locPref") as? Bool {
-                                if wantToShare {
-                                    dataB.addUserRecentLoc(cityRef: dataB.rootRef.child("rooms").child(self.lastValidCity!), loc: locations[0].coordinate)
-                                    self.lastUpdate = Date() //to compare in future...
-                                }
-                            }
-                            else {
-                                self.userLocPref.isOn = false
+                if delAccess.city == nil || delAccess.city != placemark?[0].locality {
+                    delAccess.city != placemark?[0].locality && delAccess.city != nil ? self.resetMapData() : nil
+                    delAccess.city = placemark?[0].locality!
+                    self.lastValidCity = placemark?[0].locality!
+                    self.citylabel.text = placemark?[0].locality!
+                    
+                    self.gatherAndPresentLocals()
+                    self.gatherAndPresentRooms() //maybe have this data popup, but turn off buttons
+                    
+                    if self.lastUpdate == nil { //gonna update if needed.. may be turned back on
+                        if let wantToShare = UserDefaults.standard.value(forKey: "locPref") as? Bool {
+                            if wantToShare {
+                                dataB.addUserRecentLoc(cityRef: dataB.rootRef.child("rooms").child(self.lastValidCity!), loc: locations[0].coordinate)
+                                self.lastUpdate = Date() //to compare in future...
                             }
                         }
-                        else if Int(Date().timeIntervalSince(self.lastUpdate!)) >= 60 { //will wait a minute
-                            self.lastUpdate = nil  //will force to reshare loc, assuming they want toff
+                        else {
+                            self.userLocPref.isOn = false
                         }
-                        self.mapView.setCenter(locations[0].coordinate, zoomLevel: 15, animated: true)
-                        self.gpsAccLabel.isHidden = true
-                        self.createLabel.isEnabled = true
-                        self.createLabel.layer.backgroundColor = UIColor.blue.cgColor
                     }
+                    else if Int(Date().timeIntervalSince(self.lastUpdate!)) >= 60 { //will wait a minute
+                        self.lastUpdate = nil  //will force to reshare loc, assuming they want toff
+                    }
+                    self.mapView.setCenter(locations[0].coordinate, zoomLevel: 15, animated: true)
+                    self.gpsAccLabel.isHidden = true
                 }
             }
-            self.updateDistances(cLoc: locations[0])
+           self.updateDistances(cLoc: locations[0]) //to allow comparisons with freshest loc, necessaryily running
+            
         }
         else {
             self.gpsAccLabel.isHidden = false
@@ -158,7 +152,7 @@ class tab2View: UIViewController, CLLocationManagerDelegate, MGLMapViewDelegate 
         else if let room = annotation as? roomAnnot {
             var image = UIImage(named: "roomCircle-1.png")
             var roomImage = mapView.dequeueReusableAnnotationImage(withIdentifier: "annotation")
-            if room.getRoomName() == dataB.roomName {
+            if room.getRoomName() == dataB.roomName { //users current room
                 image = UIImage(named: "greenRoom.png") //.....
                 image = image?.withAlignmentRectInsets(UIEdgeInsets(top: 0, left: 0, bottom: (image?.size.height)!/2, right: 0))
                 roomImage = MGLAnnotationImage(image: image!, reuseIdentifier: "userroom")
@@ -188,18 +182,28 @@ class tab2View: UIViewController, CLLocationManagerDelegate, MGLMapViewDelegate 
     }
     
     private func resetMapData() {
-        self.mapView.removeAnnotations( Array(self.staticRooms.keys) as! [MGLAnnotation])
-        self.mapView.removeAnnotations(Array(self.cityLocals.values) )
+        if !self.staticRooms.isEmpty {
+            self.mapView.removeAnnotations(Array(self.staticRooms.values))
+        }
+        if !self.cityLocals.isEmpty {
+            self.mapView.removeAnnotations(Array(self.cityLocals.values) )
+        }
     }
     
     /**
      Checks for users who have recently looked for rooms in database. Calls function to display rooms after finding rooms, if any. Associated presentCityLocals. Will compare fresh localData with storedData and add if needed
      **/
     func gatherAndPresentLocals() {
+        if self.lastValidCity == nil {
+            return
+        }
         dataB.rootRef.child("rooms").child(self.lastValidCity!).child("RECENTS").observe(.value, with: { (snapshot) in
             if snapshot.exists() {
                 if let newPPL = snapshot.value as? [String: [Any]] {
                     self.presentCityLocals(userLocs: newPPL)
+                }
+                else {
+                    print("no one!")
                 }
             }
         })
@@ -355,10 +359,11 @@ class tab2View: UIViewController, CLLocationManagerDelegate, MGLMapViewDelegate 
         if self.lastValidCity == nil {
             return
         }
+    
         self.updateMapCount() //map display information like room, user count
-        
-        if self.staticRooms.isEmpty { //want to make sure its tried to load what i can
-            self.createLabel.isUserInteractionEnabled = true
+    
+        if self.staticRooms.isEmpty {
+            self.createLabel.isEnabled = true
             self.createLabel.layer.backgroundColor = UIColor.blue.cgColor
             return
         }
@@ -372,17 +377,13 @@ class tab2View: UIViewController, CLLocationManagerDelegate, MGLMapViewDelegate 
             let sorted = Array(self.distanceToCoords.values).sorted(by: <)
             
             if sorted[0] < 8 { //8 meters
-                self.createLabel.isUserInteractionEnabled = false
+                self.createLabel.isEnabled = false
                 self.createLabel.layer.backgroundColor = UIColor.darkGray.cgColor
             }
-            else if sorted[0] > 8 && self.createLabel.isUserInteractionEnabled == false { //was too close, but back off... free to create room
-                self.createLabel.isUserInteractionEnabled = true
+            else {
+                self.createLabel.isEnabled = true
                 self.createLabel.layer.backgroundColor = UIColor.blue.cgColor
             }
-        }
-        else {
-            self.createLabel.isUserInteractionEnabled = false
-            self.createLabel.layer.backgroundColor = UIColor.darkGray.cgColor
         }
     }
 }
