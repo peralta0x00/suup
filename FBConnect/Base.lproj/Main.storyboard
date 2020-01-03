@@ -985,7 +985,7 @@
                                         <attributedString key="attributedText"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardAppearance="alert" enablesReturnKeyAutomatically="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                         <connections>
-                                            <action selector="messageEditingStatus:" destination="SVl-F4-UCf" eventType="editingChanged" id="Jfi-YF-HQi"/>
+                                            <action selector="messageEditingStatus:" destination="SVl-F4-UCf" eventType="editingChanged" id="SAp-sS-wPw"/>
                                             <action selector="messageEditingStatus:" destination="SVl-F4-UCf" eventType="touchUpInside" id="tta-ee-EGY"/>
                                             <outlet property="delegate" destination="SVl-F4-UCf" id="2Ih-Tm-fsz"/>
                                         </connections>

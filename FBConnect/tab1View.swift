@@ -32,7 +32,7 @@ func getTimeAsString() -> String{
     return dformat.string(from: Date())
 }
 
-class tab1View: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, UITabBarDelegate  {
+class tab1View: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, UITabBarDelegate {
     @IBOutlet weak var mainTable: UITableView!
     @IBOutlet weak var messageField: UITextField!
     @IBOutlet weak var roomLabel: UILabel!
@@ -80,8 +80,8 @@ class tab1View: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
         NotificationCenter.default.addObserver(self, selector: #selector(pauseRoom) , name: NSNotification.Name(rawValue: "pauseRoom"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(comingBack) , name: NSNotification.Name(rawValue: "comingBack"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(destroy), name: UIApplication.willTerminateNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardMove), name: tab1View.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardMove), name: tab1View.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardMove), name: UIResponder.keyboardWillShowNotification , object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardMove), name: UIResponder.keyboardWillHideNotification , object: nil)
         super.viewDidLoad()
     }
     
@@ -110,22 +110,7 @@ class tab1View: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
        
     }
     
-    @objc func handleKeyboardMove(notif: Notification) {
-        if let keyboardValue = notif.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
-            let keyboardScreenEndFrame = keyboardValue.cgRectValue
-            let keyboardViewEndFrame = view.convert(keyboardScreenEndFrame, from: view.window)
-            let distance = keyboardViewEndFrame.height - view.safeAreaInsets.bottom
-            let movement: CGFloat = CGFloat(notif.name != UIResponder.keyboardWillHideNotification ? -distance : distance )
-
-            UIView.beginAnimations("animateTextField", context: nil)
-            UIView.setAnimationBeginsFromCurrentState(true)
-            self.messageView.frame = self.messageView.frame.offsetBy(dx: 0, dy: movement)
-            
-            UIView.commitAnimations()
-            
-        }
-    }
-    
+   
     
     /**
      loads room given OldRoom. reboot determines if necesssary to load room in "for first time" or if to just call, on same room, resumeRoom().
@@ -266,12 +251,27 @@ class tab1View: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
         }
     }
     
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        moveTextField(tField: textField, distance: 170, isUp: true)
+    func textFieldfEditing(_ textField: UITextField) {
+      //  moveTextField(tField: textField, distance: 170, isUp: true)
     }
     func textFieldDidEndEditing(_ textField: UITextField) {
-        moveTextField(tField: textField, distance: 170, isUp: false)
+      //  moveTextField(tField: textField, distance: 170, isUp: false)
     }
+    
+    
+    
+    @objc func handleKeyboardMove(notif: Notification) {
+        guard let keyboardValue = notif.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else { return }
+        
+        let keyboardScreenEndFrame = keyboardValue.cgRectValue
+        let keyboardViewEndFrame = view.convert(keyboardScreenEndFrame, from: view.window)
+        let distance = keyboardViewEndFrame.height - view.safeAreaInsets.bottom
+        let movement: CGFloat = CGFloat(notif.name != UIResponder.keyboardWillHideNotification ? -distance : distance )
+        UIView.animate(withDuration: .zero) {
+            self.view.frame = self.view.frame.offsetBy(dx: 0, dy: movement)
+        }
+    }
+
     
     func moveTextField(tField: UITextField, distance: Int, isUp: Bool) {
   //      let movement: CGFloat = CGFloat(isUp ? -distance : distance ) //will select direction
