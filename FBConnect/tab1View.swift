@@ -80,6 +80,8 @@ class tab1View: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
         NotificationCenter.default.addObserver(self, selector: #selector(pauseRoom) , name: NSNotification.Name(rawValue: "pauseRoom"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(comingBack) , name: NSNotification.Name(rawValue: "comingBack"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(destroy), name: UIApplication.willTerminateNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardMove), name: tab1View.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardMove), name: tab1View.keyboardWillHideNotification, object: nil)
         super.viewDidLoad()
     }
     
@@ -106,6 +108,22 @@ class tab1View: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
             }
         }
        
+    }
+    
+    @objc func handleKeyboardMove(notif: Notification) {
+        if let keyboardValue = notif.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+            let keyboardScreenEndFrame = keyboardValue.cgRectValue
+            let keyboardViewEndFrame = view.convert(keyboardScreenEndFrame, from: view.window)
+            let distance = keyboardViewEndFrame.height - view.safeAreaInsets.bottom
+            let movement: CGFloat = CGFloat(notif.name != UIResponder.keyboardWillHideNotification ? -distance : distance )
+
+            UIView.beginAnimations("animateTextField", context: nil)
+            UIView.setAnimationBeginsFromCurrentState(true)
+            self.messageView.frame = self.messageView.frame.offsetBy(dx: 0, dy: movement)
+            
+            UIView.commitAnimations()
+            
+        }
     }
     
     
@@ -249,17 +267,18 @@ class tab1View: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        moveTextField(tField: textField, distance: 200, isUp: true)
+        moveTextField(tField: textField, distance: 170, isUp: true)
     }
     func textFieldDidEndEditing(_ textField: UITextField) {
-        moveTextField(tField: textField, distance: 200, isUp: false)
+        moveTextField(tField: textField, distance: 170, isUp: false)
     }
+    
     func moveTextField(tField: UITextField, distance: Int, isUp: Bool) {
-        let movement: CGFloat = CGFloat(isUp ? -distance : distance ) //will select direction
-        UIView.beginAnimations("animateTextField", context: nil)
-        UIView.setAnimationBeginsFromCurrentState(true)
-        self.view.frame = self.view.frame.offsetBy(dx: 0, dy: movement)
-        UIView.commitAnimations()
+  //      let movement: CGFloat = CGFloat(isUp ? -distance : distance ) //will select direction
+//        UIView.beginAnimations("animateTextField", context: nil)
+    //    UIView.setAnimationBeginsFromCurrentState(true)
+      //  self.view.frame = self.view.frame.offsetBy(dx: 0, dy: movement)
+        //UIView.commitAnimations()
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -302,6 +321,9 @@ class tab1View: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
                     
                 }))
                 self.present(alert, animated: true, completion: nil)
+            }
+            else {
+                self.mainTable.cellForRow(at: indexPath)?.isSelected = false
             }
         }
     }

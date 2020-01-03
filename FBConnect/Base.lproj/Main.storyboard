@@ -1508,7 +1508,7 @@ In order to ensure Suup provides the best experience possible for everyone, we s
         <image name="usericon" width="35" height="35"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="cD8-Fw-F9a"/>
+        <segue reference="hzn-Pa-I3N"/>
         <segue reference="jHa-Kv-I4g"/>
     </inferredMetricsTieBreakers>
 </document>
