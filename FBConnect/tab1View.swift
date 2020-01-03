@@ -251,15 +251,6 @@ class tab1View: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
         }
     }
     
-    func textFieldfEditing(_ textField: UITextField) {
-      //  moveTextField(tField: textField, distance: 170, isUp: true)
-    }
-    func textFieldDidEndEditing(_ textField: UITextField) {
-      //  moveTextField(tField: textField, distance: 170, isUp: false)
-    }
-    
-    
-    
     @objc func handleKeyboardMove(notif: Notification) {
         guard let keyboardValue = notif.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else { return }
         
@@ -270,15 +261,6 @@ class tab1View: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
         UIView.animate(withDuration: .zero) {
             self.view.frame = self.view.frame.offsetBy(dx: 0, dy: movement)
         }
-    }
-
-    
-    func moveTextField(tField: UITextField, distance: Int, isUp: Bool) {
-  //      let movement: CGFloat = CGFloat(isUp ? -distance : distance ) //will select direction
-//        UIView.beginAnimations("animateTextField", context: nil)
-    //    UIView.setAnimationBeginsFromCurrentState(true)
-      //  self.view.frame = self.view.frame.offsetBy(dx: 0, dy: movement)
-        //UIView.commitAnimations()
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
