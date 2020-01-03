@@ -125,11 +125,11 @@ class tab2View: UIViewController, CLLocationManagerDelegate, MGLMapViewDelegate 
                         self.lastUpdate = nil  //will force to reshare loc, assuming they want toff
                     }
                     self.mapView.setCenter(locations[0].coordinate, zoomLevel: 15, animated: true)
-                    self.gpsAccLabel.isHidden = true
+                    
                 }
             }
-           self.updateDistances(cLoc: locations[0]) //to allow comparisons with freshest loc, necessaryily running
-            
+            self.gpsAccLabel.isHidden = true
+            self.updateDistances(cLoc: locations[0]) //to allow comparisons with freshest loc, necessaryily running
         }
         else {
             self.gpsAccLabel.isHidden = false
