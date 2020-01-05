@@ -77,10 +77,9 @@ class tab3View: UIViewController {
     
     func moveTextField(tField: UITextField, distance: Int, isUp: Bool) {
         let movement: CGFloat = CGFloat(isUp ? -distance : distance ) //will select direction
-        UIView.beginAnimations("animateTextField", context: nil)
-        UIView.setAnimationBeginsFromCurrentState(true)
-        self.view.frame = self.view.frame.offsetBy(dx: 0, dy: movement)
-        UIView.commitAnimations()
+        UIView.animate(withDuration: .zero) {
+            self.view.frame = self.view.frame.offsetBy(dx: 0, dy: movement)
+        }
     }
     
     @IBOutlet weak var townLocation: UILabel!

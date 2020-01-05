@@ -87,7 +87,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if UserDefaults.standard.value(forKey: "lastJoinedRoom") != nil {
             self.exitTime = Date()
-            if let fuck = dataB.hostRoom.locRef {
+            if dataB.hostRoom.locRef != nil {
                 NotificationCenter.default.post(name: NSNotification.Name(rawValue: "pauseRoom"), object: nil)
             }
         }

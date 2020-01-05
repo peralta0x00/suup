@@ -317,10 +317,6 @@ class user {
     private func getUsersImage() -> UIImage? {
         return self.userImage
     }
-    func printOut() {
-        print(self.getUserUID())
-        print(self.userImage)
-    }
    
     
    

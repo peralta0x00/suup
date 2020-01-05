@@ -30,19 +30,14 @@ class loginView: UIViewController {
     @IBAction func updatedLoginAction(_ sender: UIButton) {
        
         provider.getCredentialWith(nil) { (creds, error) in
-            if error != nil {
-                print(error)
-            }
+
             if creds != nil {
                 Auth.auth().signIn(with: creds!) { (authResult, error) in
-                    if error != nil {
-                        print(error)
-                    }
                     if let result = authResult {
                         print("here's auth result from updated method: \(result)")
                         TWTRAPIClient(userID: result.user.uid).loadUser(withID: result.user.uid) { (loggedUser, error) in
                             if error != nil {
-                                self.present(createError(mensaje: "error loading creds with updated method: \(error)"), animated: true)
+                                self.present(createError(mensaje: "error loading creds with updated method: \(error!)"), animated: true)
                             }
                             else if loggedUser != nil {
                                 person = mainUser(user: loggedUser!)

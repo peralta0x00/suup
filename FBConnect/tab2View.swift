@@ -150,10 +150,10 @@ class tab2View: UIViewController, CLLocationManagerDelegate, MGLMapViewDelegate 
             return MGLAnnotationImage(image: (image?.withAlignmentRectInsets(UIEdgeInsets(top: 0, left: 0, bottom: (image?.size.height)!/5, right: 0)))!, reuseIdentifier: "userAnnot")
         }
         else if let room = annotation as? roomAnnot {
-            var image = UIImage(named: "roomCircle-1.png")
+            var image = UIImage(named: "anotherRoomPic.png")
             var roomImage = mapView.dequeueReusableAnnotationImage(withIdentifier: "annotation")
             if room.getRoomName() == dataB.roomName { //users current room
-                image = UIImage(named: "greenRoom.png") //.....
+                image = UIImage(named: "greenRoom.png")
                 image = image?.withAlignmentRectInsets(UIEdgeInsets(top: 0, left: 0, bottom: (image?.size.height)!/2, right: 0))
                 roomImage = MGLAnnotationImage(image: image!, reuseIdentifier: "userroom")
             }
@@ -240,7 +240,7 @@ class tab2View: UIViewController, CLLocationManagerDelegate, MGLMapViewDelegate 
         if self.lastValidCity == nil {
             return
         }
-        DispatchQueue.global(qos: .background).sync {
+        _ = DispatchQueue.global(qos: .background).sync {
             dataB.rootRef.child("rooms").child(self.lastValidCity!).observe(.value) { (snapshot) in
                 if snapshot.exists() {
                     if let tmp = snapshot.value as? [String: [String: Any]] {
