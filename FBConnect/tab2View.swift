@@ -99,7 +99,7 @@ class tab2View: UIViewController, CLLocationManagerDelegate, MGLMapViewDelegate 
      if not, having already ran in initial phase (when first loading room), will maintain data through persistent functions (new locations don't matter if in same city..)
      */
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if locations[0].verticalAccuracy <= 13 {
+        if locations[0].verticalAccuracy <= 20 {
             CLGeocoder().reverseGeocodeLocation(locations[0]) { (placemark, error) in
                 if delAccess.city == nil || delAccess.city != placemark?[0].locality {
                     delAccess.city != placemark?[0].locality && delAccess.city != nil ? self.resetMapData() : nil
