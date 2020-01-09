@@ -31,8 +31,8 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DCs-8V-UCY">
-                                <rect key="frame" x="20.000000000000004" y="556" width="51.333333333333343" height="40"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DCs-8V-UCY">
+                                <rect key="frame" x="20" y="556" width="51.333333333333343" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Nub-2i-Q48"/>
                                 </constraints>
@@ -151,7 +151,7 @@
                                     <action selector="showInfo:" destination="nK4-m4-RBy" eventType="touchUpInside" id="STM-N8-cV7"/>
                                 </connections>
                             </button>
-                            <segmentedControl opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Ju7-x2-Phr">
+                            <segmentedControl opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Ju7-x2-Phr">
                                 <rect key="frame" x="78.333333333333343" y="559" width="286.66666666666663" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31" id="EjU-dD-Q2m"/>

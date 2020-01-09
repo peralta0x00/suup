@@ -136,6 +136,7 @@ class tab2View: UIViewController, CLLocationManagerDelegate, MGLMapViewDelegate 
             self.createLabel.isEnabled = false
             self.createLabel.layer.backgroundColor = UIColor.darkGray.cgColor
             self.mapView.setCenter(locations[0].coordinate, zoomLevel: 11, animated: true)
+            delAccess.locManager.startUpdatingLocation()
         }
     }
     
