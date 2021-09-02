@@ -87,8 +87,8 @@ class tab1View: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
     
     /**
      view immediately checks for authorization errors...
-     if none, will push the most current room to holyfuck function or show nothing when there is no room
-     checks done in holyfuck for some reason? i think always having checks in viewdidappear was fucked or something
+     if none, will push the most current room to function or show nothing when there is no room
+     checks done in for some reason? i think always having checks in viewdidappear was fucked or something
      */
     override func viewDidAppear(_ animated: Bool) {
         if self.dontLoad {
